@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/07/2022 0:42:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Datos.Inventario" table="inventario" catalog="sgjn" optimistic-lock="version">
+        <id name="idinventario" type="int">
+            <column name="idinventario" />
+            <generator class="assigned" />
+        </id>
+        <property name="idCategoria" type="int">
+            <column name="id_categoria" not-null="true" />
+        </property>
+        <property name="idProducto" type="int">
+            <column name="id_producto" not-null="true" />
+        </property>
+        <property name="idProveedor" type="int">
+            <column name="id_proveedor" not-null="true" />
+        </property>
+        <property name="cantidad" type="int">
+            <column name="cantidad" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
