@@ -1,5 +1,5 @@
-package Datos;
-// Generated 02/07/2022 0:41:59 by Hibernate Tools 4.3.1
+package datos;
+// Generated 16/07/2022 1:16:45 by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;

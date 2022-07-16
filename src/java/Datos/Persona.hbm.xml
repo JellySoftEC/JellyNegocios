@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02/07/2022 0:42:00 by Hibernate Tools 4.3.1 -->
+<!-- Generated 16/07/2022 1:16:45 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Datos.Persona" table="persona" catalog="sgjn" optimistic-lock="version">
+    <class name="datos.Persona" table="persona" catalog="sgjn" optimistic-lock="version">
         <id name="idpersona" type="int">
             <column name="idpersona" />
             <generator class="assigned" />
