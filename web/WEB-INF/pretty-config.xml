@@ -6,12 +6,24 @@
     <url-mapping id="login"> 
        <pattern value="/login" /> 
        <view-id value="/faces/login.xhtml" />
-   </url-mapping> 
+    </url-mapping> 
     
     
-        <url-mapping id="index"> 
+    <url-mapping id="index"> 
        <pattern value="/index" /> 
        <view-id value="/faces/index.xhtml" />
-   </url-mapping> 
+    </url-mapping> 
+   
+    <url-mapping id="producto"> 
+       <pattern value="/producto" /> 
+       <view-id value="/faces/producto.xhtml" />
+    </url-mapping> 
+    
+    <url-mapping id="index2"> 
+       <pattern value="/index2" /> 
+       <view-id value="/faces/index2.xhtml" />
+    </url-mapping> 
+
+   
 </pretty-config>
     
