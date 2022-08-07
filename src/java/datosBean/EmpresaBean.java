@@ -7,6 +7,7 @@ package datosBean;
 
 import java.util.List;
 import datos.SgjnEmpresa;
+import datosDAO.EmpresaDAO;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -31,7 +32,7 @@ public class EmpresaBean {
     
     //Listar datos de la empresa
     public void obtenerempresa(){
-        
+        listempresa = EmpresaDAO.datosEmpresa();
     }
     
     //Modifica los datos de la empresa
