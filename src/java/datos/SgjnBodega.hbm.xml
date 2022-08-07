@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnBodega" table="sgjn_bodega" catalog="sgjn" optimistic-lock="version">
+        <id name="jnbodCodigo" type="int">
+            <column name="jnbod_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnbodNombre" type="string">
+            <column name="jnbod_nombre" length="50" not-null="true" />
+        </property>
+        <property name="jnbodDireccion" type="string">
+            <column name="jnbod_direccion" length="50" not-null="true" />
+        </property>
+        <property name="jnbodResponsable" type="string">
+            <column name="jnbod_responsable" length="50" not-null="true" />
+        </property>
+        <property name="jnbodTelefono" type="string">
+            <column name="jnbod_telefono" length="50" not-null="true" />
+        </property>
+        <property name="jnbodEstado" type="string">
+            <column name="jnbod_estado" length="1" not-null="true" />
+        </property>
+        <property name="jnbodUsuarioInsert" type="string">
+            <column name="jnbod_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jnbodFechaInsert" type="timestamp">
+            <column name="jnbod_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnbodUsuarioUpdate" type="string">
+            <column name="jnbod_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jnbodFechaUpdate" type="timestamp">
+            <column name="jnbod_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

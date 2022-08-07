@@ -46,13 +46,24 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sgjn?autoReconnect=true&amp;;zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
-    <property name="hibernate.connection.useSSL">false</property>
-    <property name="hibernate.connection.requireSSL">false</property>
-    <mapping resource="datos/Categoria.hbm.xml"/>
-    <mapping resource="datos/Inventario.hbm.xml"/>
-    <mapping resource="datos/FacDet.hbm.xml"/>
-    <mapping resource="datos/Persona.hbm.xml"/>
-    <mapping resource="datos/FacCab.hbm.xml"/>
-    <mapping resource="datos/Producto.hbm.xml"/>
+    <mapping resource="datos/SgjnUnidadMedida.hbm.xml"/>
+    <mapping resource="datos/SgjnProforma.hbm.xml"/>
+    <mapping resource="datos/SgjnMarca.hbm.xml"/>
+    <mapping resource="datos/SgjnProvincia.hbm.xml"/>
+    <mapping resource="datos/SgjnProformaDetalle.hbm.xml"/>
+    <mapping resource="datos/SgjnTipoFormaPago.hbm.xml"/>
+    <mapping resource="datos/SgjnEmpresa.hbm.xml"/>
+    <mapping resource="datos/SgjnCompraDetalle.hbm.xml"/>
+    <mapping resource="datos/SgjnCategoria.hbm.xml"/>
+    <mapping resource="datos/SgjnModelo.hbm.xml"/>
+    <mapping resource="datos/SgjnProducto.hbm.xml"/>
+    <mapping resource="datos/SgjnFacturaDetalle.hbm.xml"/>
+    <mapping resource="datos/SgjnCompra.hbm.xml"/>
+    <mapping resource="datos/SgjnRol.hbm.xml"/>
+    <mapping resource="datos/SgjnBodega.hbm.xml"/>
+    <mapping resource="datos/SgjnPais.hbm.xml"/>
+    <mapping resource="datos/SgjnPersona.hbm.xml"/>
+    <mapping resource="datos/SgjnFactura.hbm.xml"/>
+    <mapping resource="datos/SgjnCiudad.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

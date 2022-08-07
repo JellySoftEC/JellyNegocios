@@ -41,10 +41,23 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="sgjn"/>
-  <table-filter match-name="categoria"/>
-  <table-filter match-name="inventario"/>
-  <table-filter match-name="persona"/>
-  <table-filter match-name="producto"/>
-  <table-filter match-name="fac_det"/>
-  <table-filter match-name="fac_cab"/>
+  <table-filter match-name="sgjn_compra_detalle"/>
+  <table-filter match-name="sgjn_factura"/>
+  <table-filter match-name="sgjn_pais"/>
+  <table-filter match-name="sgjn_marca"/>
+  <table-filter match-name="sgjn_compra"/>
+  <table-filter match-name="sgjn_producto"/>
+  <table-filter match-name="sgjn_ciudad"/>
+  <table-filter match-name="sgjn_proforma_detalle"/>
+  <table-filter match-name="sgjn_persona"/>
+  <table-filter match-name="sgjn_empresa"/>
+  <table-filter match-name="sgjn_provincia"/>
+  <table-filter match-name="sgjn_rol"/>
+  <table-filter match-name="sgjn_bodega"/>
+  <table-filter match-name="sgjn_modelo"/>
+  <table-filter match-name="sgjn_tipo_forma_pago"/>
+  <table-filter match-name="sgjn_proforma"/>
+  <table-filter match-name="sgjn_unidad_medida"/>
+  <table-filter match-name="sgjn_factura_detalle"/>
+  <table-filter match-name="sgjn_categoria"/>
 </hibernate-reverse-engineering>

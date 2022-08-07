@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnPersona" table="sgjn_persona" catalog="sgjn" optimistic-lock="version">
+        <id name="jnperCodigo" type="int">
+            <column name="jnper_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnrolCodigo" type="int">
+            <column name="jnrol_codigo" not-null="true" />
+        </property>
+        <property name="jnpaisCodigo" type="int">
+            <column name="jnpais_codigo" not-null="true" />
+        </property>
+        <property name="jnprovCodigo" type="int">
+            <column name="jnprov_codigo" not-null="true" />
+        </property>
+        <property name="jnciuCodigo" type="int">
+            <column name="jnciu_codigo" not-null="true" />
+        </property>
+        <property name="jnperRuc" type="string">
+            <column name="jnper_ruc" length="10" not-null="true" />
+        </property>
+        <property name="jnperNombres" type="string">
+            <column name="jnper_nombres" length="25" not-null="true" />
+        </property>
+        <property name="jnperApellidos" type="string">
+            <column name="jnper_apellidos" length="25" not-null="true" />
+        </property>
+        <property name="jnperDireccion" type="string">
+            <column name="jnper_direccion" length="25" not-null="true" />
+        </property>
+        <property name="jnperTelefono" type="string">
+            <column name="jnper_telefono" length="10" not-null="true" />
+        </property>
+        <property name="jnperEmail" type="string">
+            <column name="jnper_email" length="25" not-null="true" />
+        </property>
+        <property name="jnperSexo" type="string">
+            <column name="jnper_sexo" length="1" not-null="true" />
+        </property>
+        <property name="jnperNombreUsuario" type="string">
+            <column name="jnper_nombre_usuario" length="25" not-null="true" />
+        </property>
+        <property name="jnperPassword" type="string">
+            <column name="jnper_password" length="25" not-null="true" />
+        </property>
+        <property name="jnperEstado" type="string">
+            <column name="jnper_estado" length="1" not-null="true" />
+        </property>
+        <property name="jnperUsuarioInsert" type="string">
+            <column name="jnper_usuario_insert" length="25" not-null="true" />
+        </property>
+        <property name="jnperFechaInsert" type="timestamp">
+            <column name="jnper_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnperUsuarioUpdate" type="string">
+            <column name="jnper_usuario_update" length="25" not-null="true" />
+        </property>
+        <property name="jnperFechaUpdate" type="timestamp">
+            <column name="jnper_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

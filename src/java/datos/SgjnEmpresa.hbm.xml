@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnEmpresa" table="sgjn_empresa" catalog="sgjn" optimistic-lock="version">
+        <id name="jnempCodigo" type="int">
+            <column name="jnemp_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnempRuc" type="string">
+            <column name="jnemp_ruc" length="10" not-null="true" />
+        </property>
+        <property name="jnempNombres" type="string">
+            <column name="jnemp_nombres" length="25" not-null="true" />
+        </property>
+        <property name="jnempDireccion" type="string">
+            <column name="jnemp_direccion" length="25" not-null="true" />
+        </property>
+        <property name="jnempEmail" type="string">
+            <column name="jnemp_email" length="25" not-null="true" />
+        </property>
+        <property name="jnempTelefono" type="string">
+            <column name="jnemp_telefono" length="10" not-null="true" />
+        </property>
+        <property name="jnempLogo" type="binary">
+            <column name="jnemp_logo" not-null="true" />
+        </property>
+        <property name="jnempUsuarioInsert" type="string">
+            <column name="jnemp_usuario_insert" length="25" not-null="true" />
+        </property>
+        <property name="jnempFechaInsert" type="timestamp">
+            <column name="jnemp_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnempUsuarioUpdate" type="string">
+            <column name="jnemp_usuario_update" length="25" not-null="true" />
+        </property>
+        <property name="jnempFechaUpdate" type="timestamp">
+            <column name="jnemp_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnCategoria" table="sgjn_categoria" catalog="sgjn" optimistic-lock="version">
+        <id name="jncatCodigo" type="int">
+            <column name="jncat_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jncatNombre" type="string">
+            <column name="jncat_nombre" length="25" not-null="true" />
+        </property>
+        <property name="jncatEstado" type="boolean">
+            <column name="jncat_estado" not-null="true" />
+        </property>
+        <property name="jncatUsuarioInsert" type="string">
+            <column name="jncat_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jncatFechaInsert" type="timestamp">
+            <column name="jncat_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jncatUsuarioUpdate" type="string">
+            <column name="jncat_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jncatFechaUpdate" type="timestamp">
+            <column name="jncat_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnProforma" table="sgjn_proforma" catalog="sgjn" optimistic-lock="version">
+        <id name="jnprofCodigo" type="int">
+            <column name="jnprof_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnperCodigo" type="int">
+            <column name="jnper_codigo" not-null="true" />
+        </property>
+        <property name="jnempCodigo" type="int">
+            <column name="jnemp_codigo" not-null="true" />
+        </property>
+        <property name="jnprofNumero" type="string">
+            <column name="jnprof_numero" length="20" not-null="true" />
+        </property>
+        <property name="jnprofFechaEmision" type="date">
+            <column name="jnprof_fecha_emision" length="10" not-null="true" />
+        </property>
+        <property name="jnprofFechaVencimiento" type="date">
+            <column name="jnprof_fecha_vencimiento" length="10" not-null="true" />
+        </property>
+        <property name="jnprofSubtotal" type="double">
+            <column name="jnprof_subtotal" precision="10" not-null="true" />
+        </property>
+        <property name="jnprofPorcentIva" type="double">
+            <column name="jnprof_porcent_iva" precision="5" not-null="true" />
+        </property>
+        <property name="jnprofDescuento" type="double">
+            <column name="jnprof_descuento" precision="5" not-null="true" />
+        </property>
+        <property name="jnprofTotal" type="double">
+            <column name="jnprof_total" precision="10" scale="3" not-null="true" />
+        </property>
+        <property name="jnprofObservacion" type="string">
+            <column name="jnprof_observacion" length="30" not-null="true" />
+        </property>
+        <property name="jnprofUsuarioInsert" type="string">
+            <column name="jnprof_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jnprofFechaInsert" type="timestamp">
+            <column name="jnprof_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnprofUsuarioUpdate" type="string">
+            <column name="jnprof_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jnprofFechaUpdate" type="timestamp">
+            <column name="jnprof_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

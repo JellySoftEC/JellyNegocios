@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnProducto" table="sgjn_producto" catalog="sgjn" optimistic-lock="version">
+        <id name="jnprodCodigo" type="int">
+            <column name="jnprod_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jncatCodigo" type="int">
+            <column name="jncat_codigo" not-null="true" />
+        </property>
+        <property name="jnumCodigo" type="int">
+            <column name="jnum_codigo" not-null="true" />
+        </property>
+        <property name="jnmrCodigo" type="int">
+            <column name="jnmr_codigo" not-null="true" />
+        </property>
+        <property name="jnmodCodigo" type="int">
+            <column name="jnmod_codigo" not-null="true" />
+        </property>
+        <property name="jnbodCodigo" type="int">
+            <column name="jnbod_codigo" not-null="true" />
+        </property>
+        <property name="jnprodNombre" type="string">
+            <column name="jnprod_nombre" length="25" not-null="true" />
+        </property>
+        <property name="jnprodEstado" type="string">
+            <column name="jnprod_estado" length="1" not-null="true" />
+        </property>
+        <property name="jnprodPrecioCosto" type="double">
+            <column name="jnprod_precio_costo" precision="10" not-null="true" />
+        </property>
+        <property name="jnprodPrecioVenta" type="double">
+            <column name="jnprod_precio_venta" precision="10" not-null="true" />
+        </property>
+        <property name="jnprodPrecioMayoreo" type="double">
+            <column name="jnprod_precio_mayoreo" precision="10" not-null="true" />
+        </property>
+        <property name="jnprodStock" type="double">
+            <column name="jnprod_stock" precision="10" not-null="true" />
+        </property>
+        <property name="jnprodStockMinimo" type="double">
+            <column name="jnprod_stock_minimo" precision="10" not-null="true" />
+        </property>
+        <property name="jnprodUsuarioInsert" type="string">
+            <column name="jnprod_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jnprodFechaInsert" type="timestamp">
+            <column name="jnprod_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnprodUsuarioUpdate" type="string">
+            <column name="jnprod_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jnprodFechaUpdate" type="timestamp">
+            <column name="jnprod_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

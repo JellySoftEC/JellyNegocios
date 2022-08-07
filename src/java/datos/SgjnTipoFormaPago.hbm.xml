@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnTipoFormaPago" table="sgjn_tipo_forma_pago" catalog="sgjn" optimistic-lock="version">
+        <id name="jntfpCodigo" type="int">
+            <column name="jntfp_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnpcdCodigo" type="int">
+            <column name="jnpcd_codigo" not-null="true" />
+        </property>
+        <property name="jnaCodigo" type="int">
+            <column name="jna_codigo" not-null="true" />
+        </property>
+        <property name="jntfpNombre" type="string">
+            <column name="jntfp_nombre" length="50" not-null="true" />
+        </property>
+        <property name="jntfpDescripcion" type="string">
+            <column name="jntfp_descripcion" length="50" not-null="true" />
+        </property>
+        <property name="jntfpEstadoTipo" type="boolean">
+            <column name="jntfp_estado_tipo" not-null="true" />
+        </property>
+        <property name="jntfpUsuarioInsert" type="string">
+            <column name="jntfp_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jntfpFechaInsert" type="timestamp">
+            <column name="jntfp_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jntfpUsuarioUpdate" type="string">
+            <column name="jntfp_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jntfpFechaUpdate" type="timestamp">
+            <column name="jntfp_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

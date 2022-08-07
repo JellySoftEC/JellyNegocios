@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnFactura" table="sgjn_factura" catalog="sgjn" optimistic-lock="version">
+        <id name="jnfacCodigo" type="int">
+            <column name="jnfac_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnperCodigo" type="int">
+            <column name="jnper_codigo" not-null="true" />
+        </property>
+        <property name="jnempCodigo" type="int">
+            <column name="jnemp_codigo" not-null="true" />
+        </property>
+        <property name="jnfacNumero" type="string">
+            <column name="jnfac_numero" length="20" not-null="true" />
+        </property>
+        <property name="jnfacFechaEmision" type="date">
+            <column name="jnfac_fecha_emision" length="10" not-null="true" />
+        </property>
+        <property name="jnfacFechaVencimiento" type="date">
+            <column name="jnfac_fecha_vencimiento" length="10" not-null="true" />
+        </property>
+        <property name="jnvSubtotal" type="double">
+            <column name="jnv_subtotal" precision="10" not-null="true" />
+        </property>
+        <property name="jnfacPorcentIva" type="double">
+            <column name="jnfac_porcent_iva" precision="5" not-null="true" />
+        </property>
+        <property name="jnfacDescuento" type="double">
+            <column name="jnfac_descuento" precision="5" not-null="true" />
+        </property>
+        <property name="jnfacTotal" type="double">
+            <column name="jnfac_total" precision="10" scale="3" not-null="true" />
+        </property>
+        <property name="jnfacObservacion" type="string">
+            <column name="jnfac_observacion" length="30" not-null="true" />
+        </property>
+        <property name="jnfacUsuarioInsert" type="string">
+            <column name="jnfac_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jnfacFechaInsert" type="timestamp">
+            <column name="jnfac_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnfacUsuarioUpdate" type="string">
+            <column name="jnfac_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jnfacFechaUpdate" type="timestamp">
+            <column name="jnfac_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

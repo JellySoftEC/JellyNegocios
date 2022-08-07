@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnRol" table="sgjn_rol" catalog="sgjn" optimistic-lock="version">
+        <id name="jnrolCodigo" type="int">
+            <column name="jnrol_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnrolNombre" type="string">
+            <column name="jnrol_nombre" length="25" not-null="true" />
+        </property>
+        <property name="jnrolEstado" type="string">
+            <column name="jnrol_estado" length="1" not-null="true" />
+        </property>
+        <property name="jnrolUsuarioInsert" type="string">
+            <column name="jnrol_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jnrolFechaInsert" type="timestamp">
+            <column name="jnrol_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnrolUsuarioUpdate" type="string">
+            <column name="jnrol_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jnrolFechaUpdate" type="timestamp">
+            <column name="jnrol_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

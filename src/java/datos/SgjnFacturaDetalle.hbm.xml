@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/08/2022 20:55:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datos.SgjnFacturaDetalle" table="sgjn_factura_detalle" catalog="sgjn" optimistic-lock="version">
+        <id name="jnfdetCodigo" type="int">
+            <column name="jnfdet_codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="jnprofCodigo" type="int">
+            <column name="jnprof_codigo" not-null="true" />
+        </property>
+        <property name="jnprodCodigo" type="int">
+            <column name="jnprod_codigo" not-null="true" />
+        </property>
+        <property name="jnpdetValorUnitario" type="double">
+            <column name="jnpdet_valor_unitario" precision="10" scale="3" not-null="true" />
+        </property>
+        <property name="jnpdetValorDescuento" type="double">
+            <column name="jnpdet_valor_descuento" precision="10" scale="3" not-null="true" />
+        </property>
+        <property name="jnpdetTotalUnitario" type="double">
+            <column name="jnpdet_total_unitario" precision="10" scale="3" not-null="true" />
+        </property>
+        <property name="jnpdetUsuarioInsert" type="string">
+            <column name="jnpdet_usuario_insert" length="50" not-null="true" />
+        </property>
+        <property name="jnpdetFechaInsert" type="timestamp">
+            <column name="jnpdet_fecha_insert" length="19" not-null="true" />
+        </property>
+        <property name="jnpdetUsuarioUpdate" type="string">
+            <column name="jnpdet_usuario_update" length="50" not-null="true" />
+        </property>
+        <property name="jnpdetFechaUpdate" type="timestamp">
+            <column name="jnpdet_fecha_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
