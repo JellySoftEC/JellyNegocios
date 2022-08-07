@@ -46,6 +46,8 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sgjn?autoReconnect=true&amp;;zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.useSSL">false</property>
+    <property name="hibernate.connection.requireSSL">false</property>
     <mapping resource="datos/SgjnUnidadMedida.hbm.xml"/>
     <mapping resource="datos/SgjnProforma.hbm.xml"/>
     <mapping resource="datos/SgjnMarca.hbm.xml"/>

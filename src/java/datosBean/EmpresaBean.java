@@ -6,6 +6,7 @@
 package datosBean;
 
 import java.util.List;
+import java.io.Serializable;
 import datos.SgjnEmpresa;
 import datosDAO.EmpresaDAO;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "empresasBean")
 @SessionScoped
-public class EmpresaBean {
+public class EmpresaBean implements Serializable{
     private List<SgjnEmpresa> listempresa;
     private SgjnEmpresa empresa;
     
@@ -33,6 +34,7 @@ public class EmpresaBean {
     //Listar datos de la empresa
     public void obtenerempresa(){
         listempresa = EmpresaDAO.datosEmpresa();
+        empresa.setJnempNombres(listempresa.get(0).getJnempNombres());
     }
     
     //Modifica los datos de la empresa

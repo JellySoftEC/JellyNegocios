@@ -18,7 +18,7 @@ import org.hibernate.service.ServiceRegistry;
  */
 public class HibernateSGJN {
 
-   private static final SessionFactory sessionFactory;
+    private static final SessionFactory sessionFactory;
 
     static {
 
