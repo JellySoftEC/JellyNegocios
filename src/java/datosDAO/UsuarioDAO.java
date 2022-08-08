@@ -5,9 +5,9 @@
  */
 package datosDAO;
 
-import datos.SgjnEmpresa;
-import java.util.List;
+import datos.SgjnPersona;
 import db.HibernateSGJN;
+import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -15,45 +15,53 @@ import org.hibernate.Session;
  *
  * @author oscar
  */
-public class EmpresaDAO {
-    
-        public static List<SgjnEmpresa> datosEmpresa() {
+public class UsuarioDAO {
+ 
+    public static void modificarUsuario(SgjnPersona usuario) {
         Session session = HibernateSGJN.getSessionFactory().openSession();
         session.beginTransaction();
-        Query query = session.createQuery("from SgjnEmpresa");
-        List empresa = query.list();
+        session.update(usuario);
         session.getTransaction().commit();
         session.close();
-        return empresa;
-
     }
-        
-    public static SgjnEmpresa Empresa() {
+
+    public static void NuevoUsuario(SgjnPersona usuario) {
+
         Session session = HibernateSGJN.getSessionFactory().openSession();
         session.beginTransaction();
-        Query query = session.createQuery("from SgjnEmpresa");
-        SgjnEmpresa x = null;
+        session.save(usuario);
+        session.getTransaction().commit();
+        session.close();
+    }
+    
+    
+    public static List<SgjnPersona> ListarUsuario() {
+
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("from SgjnPersona");
+        List usuarios = query.list();
+        session.getTransaction().commit();
+        session.close();
+        return usuarios;
+
+    }
+    
+        public static SgjnPersona maxcodigoUsuario() {
+
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("FROM SgjnPersona where jnperCodigo = (SELECT max(jnperCodigo) FROM SgjnPersona)");
+        SgjnPersona usuario = null;
         if (!query.list().isEmpty()) {
-            x = (SgjnEmpresa) query.list().get(0);
+            usuario = (SgjnPersona) query.list().get(0);
         }
         session.getTransaction().commit();
         session.close();
-        return x;
+        return usuario;
+
     }
     
-    public static void updateEmpresa(SgjnEmpresa empresa) {
-        Session session = HibernateSGJN.getSessionFactory().openSession();
-         session.beginTransaction();
-        session.update(empresa);
-        session.getTransaction().commit();
-        session.close();
-    }
+
     
-    public static void SaveEmpresa(SgjnEmpresa empresa) {
-        Session session = HibernateSGJN.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(empresa);
-        session.getTransaction().commit();
-        session.close();
-    }
 }

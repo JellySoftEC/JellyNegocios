@@ -5,14 +5,16 @@
        xmlns:b="http://bootsfaces.net/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Home</title>
     </h:head>
     <h:body>
         <b:form inline="true">
             #{empresasBean.obtenerempresa()}
         <h:panelGrid columns="1" cellpadding="5">
-            <b:inputText label="E-mail:" value="#{empresasBean.empresa.jnempNombres}" labelStyle="width:80px;">
+            <b:inputText label="E-mail:" value="#{empresasBean.nombre}" labelStyle="width:80px;">
           </b:inputText>
+                <h:commandButton value="empresa" action="/empresa.xhtml?faces-redirect=true"/>
+                <h:commandButton value="Usuario" action="/usuario.xhtml?faces-redirect=true"/>
         </h:panelGrid>
       </b:form>
     </h:body>
