@@ -17,5 +17,10 @@
        <view-id value="/faces/usuario.xhtml" />
     </url-mapping> 
     
+    <url-mapping id="rol"> 
+       <pattern value="/rol" /> 
+       <view-id value="/faces/rol.xhtml" />
+    </url-mapping> 
+    
 </pretty-config>
     

@@ -9,13 +9,28 @@
     </h:head>
     <h:body>
         <b:form inline="true">
-            #{empresasBean.obtenerempresa()}
-        <h:panelGrid columns="1" cellpadding="5">
-            <b:inputText label="E-mail:" value="#{empresasBean.nombre}" labelStyle="width:80px;">
-          </b:inputText>
-                <h:commandButton value="empresa" action="/empresa.xhtml?faces-redirect=true"/>
-                <h:commandButton value="Usuario" action="/usuario.xhtml?faces-redirect=true"/>
-        </h:panelGrid>
+            <b:navBar brandHref="#" inverse="true">
+                <b:navbarLinks>
+                  <b:commandButton  value="empresa" action="/empresa.xhtml?faces-redirect=true"/>
+                   <b:commandButton value="Usuario" action="/usuario.xhtml?faces-redirect=true" />
+                  <b:commandButton value="Rol Usuario" action="/rol.xhtml?faces-redirect=true"/>
+                  
+                </b:navbarLinks>
+              </b:navBar>
+            <b:row>
+                <b:column span="8">
+                    
+                        <b:commandButton  value="empresa" action="/empresa.xhtml?faces-redirect=true" look="success"/>
+                    </b:column>
+            </b:row>
+            <b:row>
+                <b:column>
+                        <b:commandButton value="Usuario" action="/usuario.xhtml?faces-redirect=true" look="primary"/>
+                       
+                        <b:commandButton value="Rol Usuario" action="/rol.xhtml?faces-redirect=true" look="info"/>
+                   
+                </b:column>
+            </b:row>
       </b:form>
     </h:body>
 </html>
