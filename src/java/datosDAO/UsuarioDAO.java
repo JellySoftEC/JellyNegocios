@@ -83,7 +83,7 @@ public class UsuarioDAO {
         session.close();
     }
     
-        public static void eliminarUsuario(SgjnPersona persona) {
+    public static void eliminarUsuario(SgjnPersona persona) {
         Session session = HibernateSGJN.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(persona);

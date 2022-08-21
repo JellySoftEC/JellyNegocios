@@ -7,11 +7,39 @@
     <h:head>
         <title>Rol de Usuario</title>
     </h:head>
+
+    <!-- *************************************************************** MODAL EDITAR ROL DE USUARIO -->
+    <b:modal id="modalEdicion" title="Edición Persona" closable="true" close-on-escape="true" backdrop="true" size="modal-lg">
+        <b:form id="formEdicion">
+            <b:container fluid="true" contentDisabled="false" id="containerEdicion">
+                <b:row>
+                    <b:column span="4" offset="1">
+                        <b:inputText label="Nombre" value="#{rolBean.rol.jnrolNombre}" requiredMessage="Ingrese el nombre del pais" />
+                    </b:column>
+                    <b:column span="4" offset="1">
+                        <b:formGroup>
+                            <b:selectOneMenu value="#{rolBean.rol.jnrolEstado}" label="Estado" labelColMd="2" select2="true">
+                                <f:selectItem itemLabel="Activo" itemValue="A" />
+                                <f:selectItem itemLabel="Inactivo" itemValue="I" />
+                            </b:selectOneMenu>
+                        </b:formGroup>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column span="5" offset="4">
+                        <b:commandButton large-screen="full-width" oncomplete="if(!validationFailed) {$('#modalEdicion').modal('hide')}" look="success" ajax="true" update=":formEdicion :formLista" action="#{rolBean.actulziarRol()}" value="Guardar Cambios" />
+                    </b:column>
+                </b:row>
+            </b:container>
+        </b:form>
+    </b:modal>
+
+
     <h:body>
         <b:form>
             <b:row>
                 <b:column>
-                     <b:commandButton  value="Home" action="/index.xhtml?faces-redirect=true"/>
+                    <b:commandButton  value="Home" action="/index.xhtml?faces-redirect=true"/>
                 </b:column>
             </b:row>
         </b:form>
@@ -19,53 +47,48 @@
         <b:form id="fromDatos">
             <b:row>
                 <b:column span="6">
-                    
                     <h:panelGrid columns="1" cellpadding="5">
                         <b:inputText label="Nombre: " value="#{rolBean.nombre}" labelStyle="width:80px;"> </b:inputText>
                     </h:panelGrid>
-                    </b:column>
-                    <b:column span="10">
-                        <b:formGroup>
-                            <b:selectOneMenu value="#{rolBean.estado}" colMd="2" required="true" label="Estado" labelColMd="2" select2="true">
-                                <f:selectItem itemLabel="(Please select)" itemValue="" />
-                                <f:selectItem itemLabel="Activo" itemValue="A" />
-                                <f:selectItem itemLabel="Inactivo" itemValue="I" />
-                            </b:selectOneMenu>
-                        </b:formGroup>
-                        
-                        <b:commandButton action="#{rolBean.nuevoRol()}" value="Nuevo Rol" look="warning" >
-                        </b:commandButton>
-                    
+                </b:column>
+                <b:column span="10">
+                    <b:formGroup>
+                        <b:selectOneMenu value="#{rolBean.estado}" colMd="2" required="true" label="Estado" labelColMd="2" select2="true">
+                            <f:selectItem itemLabel="(Please select)" itemValue="" />
+                            <f:selectItem itemLabel="Activo" itemValue="A" />
+                            <f:selectItem itemLabel="Inactivo" itemValue="I" />
+                        </b:selectOneMenu>
+                    </b:formGroup>
+
+                    <b:commandButton action="#{rolBean.nuevoRol()}" value="Nuevo Rol" look="warning" >
+                    </b:commandButton>
+
                 </b:column>
             </b:row>
             <br></br>
         </b:form>
-        
+
         <b:form id="formLista">
-            <b:row>
-            <b:column span="8" offset="0">
-                <b:dataTable id="tablaDatos" value="#{rolBean.listarRol()}" var="rol" responsive="true" style="font-size: 12px; width: 100%" page-length="25" info="false" content-disabled="true" paginated="true">
-                    <b:dataTableColumn label="Codigo" value="#{rol.jnrolCodigo}" style="width: 15%;" order="asc" />
-                    <b:dataTableColumn label="Nombres" value="#{rol.jnrolNombre}" style="width: 15%;" order="asc" />
-                    <b:dataTableColumn label="Estados " value="#{rol.jnrolEstado}" style="width: 15%" />
-                    <b:dataTableColumn label="Acciones" style="width: 60%" orderable="false">
-                        <b:row>
-                            <b:column span="2" offset="0">
-                                <b:commandButton  look="warning">
-                                    <b:iconAwesome name="pencil"></b:iconAwesome>
-                                </b:commandButton>
-                            </b:column>
-                            <b:column span="2" offset="3">
-                                <b:commandButton look="danger">
-                                    <b:iconAwesome name="trash"></b:iconAwesome>
-                                </b:commandButton>
-                            </b:column>
-                        </b:row>
-                    </b:dataTableColumn>
-                </b:dataTable>
-            </b:column>
-        </b:row>
-    </b:form>
+            <b:dataTable id="tablaDatos1" value="#{rolBean.listarRol()}" var="rol" excel="true" csv="true" pdf="true" columnVisibility="true" copy="true" print="true" row-style-class="#{car.enginePower>100?'light-power':'light'}, #{car.enginePower>100?'dark-power':'dark'} ">
+                <b:dataTableColumn label="Código" value="#{rol.jnrolCodigo}" style="width: 10%;" order="asc" />
+                <b:dataTableColumn label="Nombre " value="#{rol.jnrolNombre}" style="width: 10%" />
+                <b:dataTableColumn label="Estado" value="#{rol.jnrolEstado}" style="width: 15%" />
+                <b:dataTableColumn label="Acciones" style="width: 5%">
+                    <b:row>
+                        <b:column span="2" offset="0">
+                            <b:commandButton ajax="true" update=":modalEdicion:formEdicion" action="#{rolBean.cargarRol(rol)}" oncomplete="$('#modalEdicion').modal('show')" tooltip="Editar" look="warning">
+                                <b:iconAwesome name="pencil"></b:iconAwesome>
+                            </b:commandButton>
+                        </b:column>
+                        <b:column span="2" offset="3">
+                            <b:commandButton ajax="true" update="@form" action="#{rolBean.eliminarUusuario(rol)}" tooltip="Elimnar" look="danger">
+                                <b:iconAwesome name="trash"></b:iconAwesome>
+                            </b:commandButton>
+                        </b:column>
+                    </b:row>
+                </b:dataTableColumn>
+            </b:dataTable>
+        </b:form>
     </h:body>
 </html>
 

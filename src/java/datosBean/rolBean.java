@@ -24,6 +24,8 @@ import javax.faces.bean.SessionScoped;
 public class rolBean implements Serializable {
     private List<SgjnRol> listRol;
     private SgjnRol rol;
+    
+    private int indice;
     private String nombre;
     private String estado;
     private int maxcodigo;
@@ -39,6 +41,7 @@ public class rolBean implements Serializable {
     public void initDatos(){
         listRol =  new ArrayList<>();
         rol = new SgjnRol();
+        indice = 0;
         nombre = "";
         estado = "";
         
@@ -60,8 +63,22 @@ public class rolBean implements Serializable {
         rol.setJnrolUsuarioUpdate("opizarro");
         rol.setJnrolFechaUpdate(new Date());
         RolDAO.NuevoRol(rol);
-        
-        
+    }
+    
+    //Metodo cargar datos para editar
+    public void cargarRol(SgjnRol p) {
+     indice = listRol.indexOf(p);
+     rol = listRol.get(indice);
+    }
+    
+    //Metodo actualiza un rol
+    public void actulziarRol(){
+        RolDAO.updateRol(rol);
+    }
+    
+    //Metodo para eliminar un Rol
+    public void eliminarUusuario(SgjnRol rol){
+        RolDAO.eliminarRol(rol);
     }
     
     
@@ -105,6 +122,14 @@ public class rolBean implements Serializable {
 
     public void setMaxcodigo(int maxcodigo) {
         this.maxcodigo = maxcodigo;
+    }
+
+    public int getIndice() {
+        return indice;
+    }
+
+    public void setIndice(int indice) {
+        this.indice = indice;
     }
     
 }

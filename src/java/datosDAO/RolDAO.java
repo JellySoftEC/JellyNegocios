@@ -51,4 +51,20 @@ public class RolDAO {
         return rol;
 
     }
+    
+    public static void updateRol(SgjnRol rol) {
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+         session.beginTransaction();
+        session.update(rol);
+        session.getTransaction().commit();
+        session.close();
+    }
+    
+    public static void eliminarRol(SgjnRol rol) {
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(rol);
+        session.getTransaction().commit();
+        session.close();
+    }
 }
