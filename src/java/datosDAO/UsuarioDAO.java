@@ -34,6 +34,19 @@ public class UsuarioDAO {
         session.close();
     }
     
+        public static SgjnPersona personasCodigo(int codigo) {
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("from SgjnPersona where jnperCodigo = " + codigo);
+        SgjnPersona x = null;
+        if (!query.list().isEmpty()) {
+            x = (SgjnPersona) query.list().get(0);
+        }
+        session.getTransaction().commit();
+        session.close();
+        return x;
+    }
+    
     
     public static List<SgjnPersona> ListarUsuario() {
 
@@ -62,6 +75,20 @@ public class UsuarioDAO {
 
     }
     
-
+    public static void updateUsuario(SgjnPersona persona) {
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+         session.beginTransaction();
+        session.update(persona);
+        session.getTransaction().commit();
+        session.close();
+    }
+    
+        public static void eliminarUsuario(SgjnPersona persona) {
+        Session session = HibernateSGJN.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(persona);
+        session.getTransaction().commit();
+        session.close();
+    }
     
 }

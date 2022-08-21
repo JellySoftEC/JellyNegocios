@@ -9,22 +9,6 @@
     </h:head>
     
     <!-- *************************************************************** MODAL EDITAR EMPRESA -->
-    <b:modal id="edicionEmpresa" title="Editar Datos de la Empresa" styleClass="modalPseudoClass">
-        <b:form id="formEditarEmpresa">
-            <b:inputText label="Nombre:" value="#{empresasBean.empresa.jnempNombres}" labelStyle="width:80px;"> </b:inputText>
-            <b:inputText label="Ruc:" value="#{empresasBean.empresa.jnempRuc}" labelStyle="width:80px;"> </b:inputText>
-            <b:inputText label="Direccion:" value="#{empresasBean.empresa.jnempDireccion}" labelStyle="width:80px;"> </b:inputText>
-            <b:inputText label="Telefono:" value="#{empresasBean.empresa.jnempTelefono}" labelStyle="width:80px;"> </b:inputText>
-            <b:inputText label="E-mail:" value="#{empresasBean.empresa.jnempEmail}" labelStyle="width:80px;"> </b:inputText>
-            <b:row>
-                <b:column span="4" offset="4">
-                    <b:commandButton large-screen="full-width" oncomplete="if(!validationFailed) {$('#edicionEmpresa').modal('hide')}" look="danger" ajax="true" update="@form :formEmpresa" action="#{empresasBean.updateempresa()}" value="Guardar Cambios" />
-                </b:column>
-            </b:row>
-        </b:form>
-    </b:modal>
-    
-    
      <b:modal id="modalEdicion" title="Edición país" closable="true" close-on-escape="true" backdrop="true" size="modal-lg">
             <b:form id="formEdicion">
                 <b:container fluid="true" contentDisabled="false" id="containerEdicion">
@@ -35,21 +19,21 @@
                     </b:row>
                     <b:row>
                         <b:column span="4" offset="1">
-                            <b:inputText label="RUC: " value="#{empresasBean.empresa.jnempRuc}">
+                            <b:inputText label="RUC: " value="#{empresasBean.empresa.jnempRuc}"  maxlength="13" >
                             </b:inputText>
                         </b:column>
                         <b:column span="4" offset="2">
-                            <b:inputText label="Direccióm: " value="#{empresasBean.empresa.jnempDireccion}" maxlength="4" required="true" requiredMessage="Ingrese el código de nacionalidad/Senecyt" validatorMessage="Ingrese solo números">        
+                            <b:inputText label="Direccióm: " value="#{empresasBean.empresa.jnempDireccion}" required="true" requiredMessage="Ingrese el código de nacionalidad/Senecyt" validatorMessage="Ingrese solo números">        
                             </b:inputText>
                         </b:column>
                     </b:row>
                     <b:row>
                         <b:column span="4" offset="1">
-                            <b:inputText label="Telefono: " value="#{empresasBean.empresa.jnempTelefono}">
+                            <b:inputText label="Telefono: " value="#{empresasBean.empresa.jnempTelefono}"  maxlength="10" >
                             </b:inputText>
                         </b:column>
                         <b:column span="4" offset="2">
-                            <b:inputText label="Direccióm: " value="#{empresasBean.empresa.jnempEmail}" maxlength="4" required="true" requiredMessage="Ingrese el código de nacionalidad/Senecyt" validatorMessage="Ingrese solo números">        
+                            <b:inputText label="Direccióm: " value="#{empresasBean.empresa.jnempEmail}" required="true" requiredMessage="Ingrese el código de nacionalidad/Senecyt" validatorMessage="Ingrese solo números">        
                             </b:inputText>
                         </b:column>
                     </b:row>

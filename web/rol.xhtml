@@ -8,6 +8,13 @@
         <title>Rol de Usuario</title>
     </h:head>
     <h:body>
+        <b:form>
+            <b:row>
+                <b:column>
+                     <b:commandButton  value="Home" action="/index.xhtml?faces-redirect=true"/>
+                </b:column>
+            </b:row>
+        </b:form>
         #{usuariosBean.initDatos()}
         <b:form id="fromDatos">
             <b:row>

@@ -32,6 +32,7 @@ public class UsuarioBean implements Serializable {
     private String sexo;
     private String estado;
     
+    private int indice;
     private int maxcodigo;
     
     
@@ -45,6 +46,9 @@ public class UsuarioBean implements Serializable {
     public  void initDatos(){
         listpersona =  new ArrayList<>();
         usuario =  new SgjnPersona();
+        
+        
+        indice = 0;
         ruc = "";
         nombres = "";
         apellidos = "";
@@ -86,9 +90,26 @@ public class UsuarioBean implements Serializable {
         
     }
     
+    //Metodo cargar datos para editar
+       public void cargarPersona(SgjnPersona p) {
+        indice = listpersona.indexOf(p);
+        usuario = listpersona.get(indice);
+
+    }
+    
+    //Listar datos de la persona
+    public void obtenerpersona(int codigoper){
+        usuario =  UsuarioDAO.personasCodigo(codigoper);
+    }
+    
     //Metodo actualiza un usuario
     public void actulziarUsuario(){
-        System.out.println("");
+        UsuarioDAO.updateUsuario(usuario);
+    }
+    
+    //Metodo para eliminar una persona
+    public void eliminarUusuario(SgjnPersona persona){
+        UsuarioDAO.eliminarUsuario(persona);
     }
     
     
@@ -187,6 +208,14 @@ public class UsuarioBean implements Serializable {
 
     public void setMaxcodigo(int maxcodigo) {
         this.maxcodigo = maxcodigo;
+    }
+
+    public int getIndice() {
+        return indice;
+    }
+
+    public void setIndice(int indice) {
+        this.indice = indice;
     }
 
 
