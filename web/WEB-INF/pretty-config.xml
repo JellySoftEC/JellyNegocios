@@ -3,23 +3,28 @@
     
     
     <url-mapping id="index"> 
-       <pattern value="/index" /> 
-       <view-id value="/faces/index.xhtml" />
+        <pattern value="/index" /> 
+        <view-id value="/faces/index.xhtml" />
+    </url-mapping> 
+    
+    <url-mapping id="login"> 
+        <pattern value="/login" /> 
+        <view-id value="/faces/login.xhtml" />
     </url-mapping> 
     
     <url-mapping id="empresa"> 
-       <pattern value="/empresa" /> 
-       <view-id value="/faces/empresa.xhtml" />
+        <pattern value="/empresa" /> 
+        <view-id value="/faces/empresa.xhtml" />
     </url-mapping> 
     
     <url-mapping id="usuario"> 
-       <pattern value="/usuario" /> 
-       <view-id value="/faces/usuario.xhtml" />
+        <pattern value="/usuario" /> 
+        <view-id value="/faces/usuario.xhtml" />
     </url-mapping> 
     
     <url-mapping id="rol"> 
-       <pattern value="/rol" /> 
-       <view-id value="/faces/rol.xhtml" />
+        <pattern value="/rol" /> 
+        <view-id value="/faces/rol.xhtml" />
     </url-mapping> 
     
 </pretty-config>
